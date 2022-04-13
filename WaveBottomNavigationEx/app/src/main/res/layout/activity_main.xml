@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        app:title="@string/app_name"
+        android:background="@color/colorPrimary"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <com.simform.custombottomnavigation.SSCustomBottomNavigation
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:ss_backgroundBottomColor="#ffffff"
+        app:ss_circleColor="#ff6f00"
+        app:ss_countBackgroundColor="#ff6f00"
+        app:ss_countTextColor="#ffffff"
+        app:ss_defaultIconColor="#6200EE"
+        app:ss_iconTextColor="#6200EE"
+        app:ss_iconTextSize="10sp"
+        app:ss_rippleColor="#2f424242"
+        app:ss_selectedIconColor="#ff6f00"
+        app:ss_selectedIconTextColor="#ff6f00"
+        app:ss_shadowColor="#1f212121"
+        app:ss_waveHeight="7" />
+
+
+  </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/home"
+        android:title="Home"
+        android:icon="@drawable/ic_home"
+        tools:ignore="ExtraText,HardcodedText" />
+
+    <item android:id="@+id/search"
+        android:title="Search"
+        android:icon="@drawable/ic_search"
+        tools:ignore="ExtraText,HardcodedText" />
+
+    <item android:id="@+id/bookmark"
+        android:title="Bookmark"
+        android:icon="@drawable/ic_bookmark"
+        tools:ignore="ExtraText,HardcodedText" />
+
+    <item android:id="@+id/profile"
+        android:title="Person"
+        android:icon="@drawable/ic_person"
+        tools:ignore="ExtraText,HardcodedText" />
+</menu>

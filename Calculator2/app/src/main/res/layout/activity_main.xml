@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black1"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:weightSum="7"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:text="Calculator"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical">
+        </TextView>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            tools:ignore="Suspicious0dp"
+            android:src="@mipmap/remove">
+        </ImageView>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            tools:ignore="Suspicious0dp"
+            android:src="@mipmap/square">
+        </ImageView>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            tools:ignore="Suspicious0dp"
+            android:src="@mipmap/nhan">
+        </ImageView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:orientation="horizontal"
+        android:weightSum="6">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            tools:ignore="Suspicious0dp"
+            android:src="@mipmap/menu">
+        </ImageView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="Standarad"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:gravity="center_vertical">
+        </TextView>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+        </ImageView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+        </TextView>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@mipmap/history"
+            android:layout_gravity="center_vertical">
+        </ImageView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/hienThi2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:gravity="end|center"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="20dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/hienThi1"
+            android:layout_width="match_parent"
+            android:gravity="end|center"
+            android:textSize="30dp"
+            android:text="0"
+            android:textColor="@color/white"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+        </TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        android:weightSum="6"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/black1"
+            android:text="MC"
+            android:textColor="@color/white"
+            android:textSize="20dp">
+        </Button>
+
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/black1"
+            android:text="MR"
+            android:textColor="@color/white"
+            android:textSize="20dp">
+        </Button>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/black1"
+            android:text="M+"
+            android:textColor="@color/white"
+            android:textSize="20dp">
+        </Button>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/black1"
+            android:text="M-"
+            android:textColor="@color/white"
+            android:textSize="20dp">
+        </Button>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/black1"
+            android:text="MS"
+            android:textColor="@color/white"
+            android:textSize="20dp">
+        </Button>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/black1"
+            android:text="M"
+            android:textColor="@color/white"
+            android:textSize="20dp">
+        </Button>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        android:weightSum="6"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/mod"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/black1"
+                android:text="%"
+                android:textColor="@color/white"
+                android:textSize="25dp">
+            </Button>
+
+            <Button
+                android:id="@+id/ce"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/black1"
+                android:text="CE"
+                android:textColor="@color/white"
+                android:textSize="25dp">
+            </Button>
+
+            <Button
+                android:id="@+id/C"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/black1"
+                android:text="C"
+                android:textColor="@color/white"
+                android:textSize="25dp">
+            </Button>
+
+            <ImageView
+                android:id="@+id/del"
+                android:layout_width="69dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/black1"
+                android:src="@mipmap/delete">
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/one_div_x"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="1/x"
+                android:textSize="24dp"
+                android:textColor="@color/white"
+                android:background="@color/black1">
+            </Button>
+
+            <ImageView
+                android:id="@+id/binh"
+                android:layout_width="0dp"
+                android:src="@mipmap/binh"
+                android:layout_height="match_parent"
+                android:background="@color/black1"
+                android:layout_weight="1">
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/can"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/black1"
+                android:src="@mipmap/can2">
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/chia"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/black1"
+                android:src="@mipmap/divide"
+                android:layout_weight="1">
+
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/seven"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:text="7"
+                android:textColor="@color/white"
+                android:textSize="25dp">
+            </Button>
+
+            <Button
+                android:id="@+id/eight"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:text="8"
+                android:textColor="@color/white"
+                android:textSize="25dp">
+            </Button>
+
+            <Button
+                android:id="@+id/nine"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:text="9"
+                android:textColor="@color/white"
+                android:textSize="25dp">
+            </Button>
+
+            <ImageView
+                android:id="@+id/nhan"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                tools:ignore="Suspicious0dp"
+                android:background="@color/black1"
+                android:src="@mipmap/nhan">
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/four"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:text="4"
+                android:textColor="@color/white"
+                android:textSize="25dp">
+            </Button>
+
+            <Button
+                android:id="@+id/five"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:text="5"
+                android:textColor="@color/white"
+                android:textSize="25dp">
+            </Button>
+
+            <Button
+                android:id="@+id/six"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:text="6"
+                android:textColor="@color/white"
+                android:textSize="25dp">
+            </Button>
+
+            <ImageView
+                android:id="@+id/tru"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                tools:ignore="Suspicious0dp"
+                android:background="@color/black1"
+                android:src="@mipmap/remove">
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/one"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:text="1"
+                android:textColor="@color/white"
+                android:textSize="25dp">
+            </Button>
+
+            <Button
+                android:id="@+id/two"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:text="2"
+                android:textColor="@color/white"
+                android:textSize="25dp">
+            </Button>
+
+            <Button
+                android:id="@+id/three"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:text="3"
+                android:textColor="@color/white"
+                android:textSize="25dp">
+            </Button>
+
+            <ImageView
+                android:id="@+id/plus"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                tools:ignore="Suspicious0dp"
+                android:background="@color/black1"
+                android:src="@mipmap/plus">
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/doidau"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@mipmap/congtru"
+                android:background="@color/black">
+            </ImageView>
+
+            <Button
+                android:id="@+id/zero"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="25dp">
+            </Button>
+
+            <Button
+                android:id="@+id/dot"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:text="."
+                android:textColor="@color/white"
+                android:textSize="25dp">
+            </Button>
+
+            <ImageView
+                android:id="@+id/bang"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                tools:ignore="Suspicious0dp"
+                android:background="@color/black1"
+                android:src="@mipmap/bang">
+            </ImageView>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

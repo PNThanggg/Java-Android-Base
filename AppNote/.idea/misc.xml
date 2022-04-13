@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AppNote/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.17" />
+        <entry key="..\:/AppNote/app/src/main/res/drawable/backgroud_title.xml" value="0.17" />
+        <entry key="..\:/AppNote/app/src/main/res/drawable/background_add_button.xml" value="0.17" />
+        <entry key="..\:/AppNote/app/src/main/res/drawable/background_color.xml" value="0.1305" />
+        <entry key="..\:/AppNote/app/src/main/res/drawable/background_delete.xml" value="0.1435" />
+        <entry key="..\:/AppNote/app/src/main/res/drawable/background_dialog.xml" value="0.1435" />
+        <entry key="..\:/AppNote/app/src/main/res/drawable/background_note.xml" value="0.17" />
+        <entry key="..\:/AppNote/app/src/main/res/drawable/background_note_coloe_1.xml" value="0.17" />
+        <entry key="..\:/AppNote/app/src/main/res/drawable/background_note_color_1.xml" value="0.1305" />
+        <entry key="..\:/AppNote/app/src/main/res/drawable/background_note_color_2.xml" value="0.1" />
+        <entry key="..\:/AppNote/app/src/main/res/drawable/background_note_color_3.xml" value="0.1" />
+        <entry key="..\:/AppNote/app/src/main/res/drawable/background_note_color_4.xml" value="0.1" />
+        <entry key="..\:/AppNote/app/src/main/res/drawable/background_note_color_5.xml" value="0.1" />
+        <entry key="..\:/AppNote/app/src/main/res/drawable/background_search.xml" value="0.17" />
+        <entry key="..\:/AppNote/app/src/main/res/drawable/ic_add_coutline_24.xml" value="0.17" />
+        <entry key="..\:/AppNote/app/src/main/res/drawable/ic_back.xml" value="0.17" />
+        <entry key="..\:/AppNote/app/src/main/res/drawable/ic_image.xml" value="0.1" />
+        <entry key="..\:/AppNote/app/src/main/res/drawable/ic_launcher_background.xml" value="0.17" />
+        <entry key="..\:/AppNote/app/src/main/res/drawable/ic_search.xml" value="0.17" />
+        <entry key="..\:/AppNote/app/src/main/res/drawable/ic_web_link.xml" value="0.17" />
+        <entry key="..\:/AppNote/app/src/main/res/layout/activity_create_note.xml" value="0.2" />
+        <entry key="..\:/AppNote/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/AppNote/app/src/main/res/layout/item_note.xml" value="0.21428571428571427" />
+        <entry key="..\:/AppNote/app/src/main/res/layout/layout_add_url.xml" value="0.27447916666666666" />
+        <entry key="..\:/AppNote/app/src/main/res/layout/layout_color.xml" value="0.2427536231884058" />
+        <entry key="..\:/AppNote/app/src/main/res/layout/layout_delete_note.xml" value="0.27447916666666666" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

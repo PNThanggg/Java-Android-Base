@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00d9ff"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:id="@+id/fragment"
+        android:layout_width="284dp"
+        android:layout_height="476dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.456"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.777"></FrameLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="296dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="16dp"
+        android:text="Main"
+        android:textColor="@color/black"
+        android:textSize="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <Button
+        android:onClick="onClick"
+        android:id="@+id/button1"
+        android:layout_width="138dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="44dp"
+        android:text="FragmentA"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:onClick="onClick"
+        android:id="@+id/button2"
+        android:layout_width="138dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="44dp"
+        android:text="FragmentA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.536"
+        app:layout_constraintStart_toEndOf="@+id/button1"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

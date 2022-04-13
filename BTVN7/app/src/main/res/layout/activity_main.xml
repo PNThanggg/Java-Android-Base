@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Primary"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:text="My Notes"
+        android:textSize="30dp"
+        android:fontFamily="@font/ubuntu_bold"
+        android:padding="8dp"
+        android:textColor="@color/textHint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <EditText
+            android:id="@+id/inputNote"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/ubuntu_medium"
+            android:hint="Nhập ghi chú"
+            android:inputType="textPersonName"
+            android:textColor="@color/white"
+            android:textColorHint="@color/textHint"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageAddNote"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText,TouchTargetSizeCheck" />
+
+        <ImageView
+            android:id="@+id/imageAddNote"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:tint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_note_add"
+            tools:ignore="UseAppTint" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        tools:ignore="MissingConstraints" />
+</androidx.constraintlayout.widget.ConstraintLayout>

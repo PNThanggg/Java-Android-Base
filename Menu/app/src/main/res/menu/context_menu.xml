@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Xanh"
+        android:id="@+id/menuXanh"
+        tools:ignore="HardcodedText" />
+
+    <item android:id="@+id/menuDo"
+        android:title="Đỏ"
+        tools:ignore="HardcodedText" />
+
+    <item android:title="Vàng"
+        android:id="@+id/menuVang"
+        tools:ignore="HardcodedText" />
+</menu>
