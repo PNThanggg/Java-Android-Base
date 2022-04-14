@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Dashboard UI Dark Mode</string>
+    <string name="record">Record</string>
+    <string name="shot_views">Shot Views</string>
+    <string name="clients">Clients</string>
+    <string name="_395">395</string>
+    <string name="impacted">Impacted</string>
+    <string name="_147">147</string>
+    <string name="following">Following</string>
+    <string name="_820">820</string>
+    <string name="_186">$186</string>
+    <string name="thin_face_needle">Thin face needle</string>
+    <string name="north_sylvanland">North Sylvanland</string>
+    <string name="_10_a_m_6_p_m">10 a.m - 6 p.m</string>
+    <string name="_225">$225</string>
+    <string name="hydro_lifting">Hydro lifting</string>
+</resources>
