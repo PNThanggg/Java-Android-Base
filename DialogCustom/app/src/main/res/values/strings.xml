@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DialogCustom</string>
+    <string name="textDangNhap">Click vào đây để đăng nhập</string>
 </resources>
