@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Chat App</string>
+    <string name="text">Click the button and start chat</string>
+</resources>
