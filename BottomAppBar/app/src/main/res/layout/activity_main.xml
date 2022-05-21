@@ -17,7 +17,7 @@
         app:fabCradleMargin="10dp"
         >
         <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_navigation_view"
+            android:id="@+id/navigation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:menu="@menu/app_bar_navigation"
@@ -33,9 +33,14 @@
         android:id="@+id/action_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:backgroundTint="@color/white"
         android:src="@drawable/ic_add"
         app:layout_anchor="@id/bottom_app_bar"
         app:maxImageSize="50dp"
         tools:ignore="MissingConstraints" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="670dp" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

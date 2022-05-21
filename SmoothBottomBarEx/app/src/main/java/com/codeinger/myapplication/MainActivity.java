@@ -11,7 +11,6 @@ import me.ibrahimsn.lib.SmoothBottomBar;
 
 public class MainActivity extends AppCompatActivity {
 
-
     private SmoothBottomBar bottomBar;
 
     @Override

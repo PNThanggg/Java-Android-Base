@@ -4,6 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android/BottomAppBar/app/src/main/res/layout/activity_main.xml" value="0.2609375" />
+        <entry key="..\:/Android/BottomAppBar/app/src/main/res/layout/fragment_account.xml" value="0.1644021739130435" />
+        <entry key="..\:/Android/BottomAppBar/app/src/main/res/layout/fragment_add.xml" value="0.22916666666666666" />
+        <entry key="..\:/Android/BottomAppBar/app/src/main/res/layout/fragment_exit.xml" value="0.275" />
+        <entry key="..\:/Android/BottomAppBar/app/src/main/res/layout/fragment_help.xml" value="0.275" />
+        <entry key="..\:/Android/BottomAppBar/app/src/main/res/layout/fragment_home.xml" value="0.275" />
         <entry key="..\:/Android/BottomAppBar/app/src/main/res/menu/app_bar_navigation.xml" value="0.275" />
       </map>
     </option>

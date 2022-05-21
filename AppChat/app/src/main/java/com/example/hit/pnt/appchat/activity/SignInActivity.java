@@ -6,10 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.example.hit.pnt.appchat.R;
 import com.example.hit.pnt.appchat.databinding.ActivitySignInBinding;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.messaging.FirebaseMessagingService;
 
 import java.util.HashMap;
 
@@ -34,7 +33,8 @@ public class SignInActivity extends AppCompatActivity {
     }
 
     private void addDataToFirestore() {
-        FirebaseFirestore database = FirebaseFirestore.getInstance();
+        FirebaseApp firebaseApp = FirebaseApp.initializeApp(getApplicationContext());
+        FirebaseFirestore database = FirebaseFirestore.getInstance(firebaseApp);
         HashMap<String, Object> data = new HashMap<>();
 
         data.put("first_name", "Abc");
