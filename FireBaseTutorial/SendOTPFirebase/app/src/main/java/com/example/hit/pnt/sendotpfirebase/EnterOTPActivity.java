@@ -1,8 +1,5 @@
 package com.example.hit.pnt.sendotpfirebase;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -24,23 +24,19 @@ import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
 
-import org.w3c.dom.Text;
-
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 public class EnterOTPActivity extends AppCompatActivity {
 
     private static final String TAG = EnterOTPActivity.class.getName();
 
-
     private EditText inputOPTCode;
-    private Button sendOTPCode;
-    private TextView sendAgainOTP;
 
     private FirebaseAuth mAuth;
+
     private String mPhoneNumber;
     private String mVerificationId;
+
     private PhoneAuthProvider.ForceResendingToken mForceResendingToken;
 
     @Override
@@ -53,12 +49,13 @@ public class EnterOTPActivity extends AppCompatActivity {
         setTitleToolbar();
 
         inputOPTCode = findViewById(R.id.inputOTPCode);
-        sendOTPCode = findViewById(R.id.btnSendOTPCode);
-        sendAgainOTP = findViewById(R.id.textSendOPTAgain);
+        Button btSendOTPCode = findViewById(R.id.btnSendOTPCode);
+        TextView sendAgainOTP = findViewById(R.id.textSendOPTAgain);
 
-        mAuth = FirebaseAuth.getInstance(FirebaseApp.initializeApp(this));
+        FirebaseApp.initializeApp(this);
+        mAuth = FirebaseAuth.getInstance();
 
-        sendOTPCode.setOnClickListener(new View.OnClickListener() {
+        btSendOTPCode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String strOTPCode = inputOPTCode.getText().toString().trim();
@@ -74,15 +71,15 @@ public class EnterOTPActivity extends AppCompatActivity {
         });
     }
 
-    private void getDataIntent() {
-        mPhoneNumber = getIntent().getStringExtra("phone_number");
-        mVerificationId = getIntent().getStringExtra("verification_id");
-    }
-
     private void setTitleToolbar() {
         if(getSupportActionBar() != null) {
             getSupportActionBar().setTitle("Enter OTP Code");
         }
+    }
+
+    private void getDataIntent() {
+        mPhoneNumber = getIntent().getStringExtra("phone_number");
+        mVerificationId = getIntent().getStringExtra("verificationID");
     }
 
     private void onClickSendOTPCode(String strOTPCode) {

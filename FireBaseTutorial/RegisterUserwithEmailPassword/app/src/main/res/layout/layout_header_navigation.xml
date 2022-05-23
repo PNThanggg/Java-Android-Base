@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:background="@color/purple_700">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageAvatar"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="PNT"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/imageAvatar"
+        app:layout_constraintTop_toBottomOf="@+id/imageAvatar" />
+
+    <TextView
+        android:id="@+id/textGmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PNT-HIT"
+        android:textColor="@color/white"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="@+id/textUsername"
+        app:layout_constraintTop_toBottomOf="@+id/textUsername" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

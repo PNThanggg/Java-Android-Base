@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseException;
+import com.google.firebase.FirebaseOptions;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
@@ -31,7 +32,7 @@ public class VerifyPhoneNumberActivity extends AppCompatActivity {
     private static final String TAG = VerifyPhoneNumberActivity.class.getName();
 
     private EditText inputPhoneNumber;
-    private Button verifyPhoneNumber;
+
     private FirebaseAuth mAuth;
 
     @Override
@@ -42,17 +43,20 @@ public class VerifyPhoneNumberActivity extends AppCompatActivity {
         setTitleToolbar();
 
         inputPhoneNumber = findViewById(R.id.inputPhoneNumber);
-        verifyPhoneNumber = findViewById(R.id.btnVerifyPhoneNumber);
+        Log.d("NumberPhone", inputPhoneNumber.getText().toString());
+
+        Button verifyPhoneNumber = findViewById(R.id.btnVerifyPhoneNumber);
 
         mAuth = FirebaseAuth.getInstance();
 
         verifyPhoneNumber.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(inputPhoneNumber.getText().toString().length() < 10) {
-                    Toast.makeText(VerifyPhoneNumberActivity.this, "SDT sai", Toast.LENGTH_SHORT).show();
+                String strPhoneNumber = inputPhoneNumber.getText().toString().trim();
+
+                if(strPhoneNumber.length() != 12) {
+                    Toast.makeText(VerifyPhoneNumberActivity.this, "Wrong Number Phone", Toast.LENGTH_SHORT).show();
                 } else {
-                    String strPhoneNumber = inputPhoneNumber.getText().toString().trim();
                     onClickVerifyPhoneNumber(strPhoneNumber);
                 }
             }
