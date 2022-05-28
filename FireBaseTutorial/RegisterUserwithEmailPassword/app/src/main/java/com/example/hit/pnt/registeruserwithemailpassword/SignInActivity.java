@@ -32,6 +32,10 @@ public class SignInActivity extends AppCompatActivity {
 
         dialog = new ProgressDialog(this);
 
+        setListener();
+    }
+
+    private void setListener() {
         binding.txtSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,6 +48,13 @@ public class SignInActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 onClickSignIn();
+            }
+        });
+
+        binding.txtForgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClickForgotPassword();
             }
         });
     }
@@ -70,6 +81,24 @@ public class SignInActivity extends AppCompatActivity {
                             // If sign in fails, display a message to the user.
                             Toast.makeText(SignInActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+    }
+
+    private void onClickForgotPassword() {
+        dialog.show();
+
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        auth.sendPasswordResetEmail(user.getEmail())
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        dialog.dismiss();
+                        if (task.isSuccessful()) {
+                            Toast.makeText(getApplication(), "Email send", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

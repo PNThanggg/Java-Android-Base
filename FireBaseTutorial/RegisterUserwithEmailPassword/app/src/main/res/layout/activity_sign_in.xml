@@ -46,23 +46,37 @@
         app:layout_constraintTop_toBottomOf="@+id/inputPassword" />
 
     <TextView
+        android:id="@+id/txtForgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        android:text="Forgot Password?"
+        app:layout_constraintEnd_toEndOf="@+id/btSignIn"
+        app:layout_constraintStart_toStartOf="@+id/btSignIn"
+        app:layout_constraintTop_toBottomOf="@+id/btSignIn" />
+
+    <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="28dp"
+        android:padding="5dp"
         android:text="Don't have an account?"
-        app:layout_constraintEnd_toEndOf="@+id/btSignIn"
-        app:layout_constraintTop_toBottomOf="@+id/btSignIn" />
+        app:layout_constraintEnd_toEndOf="@+id/txtForgotPassword"
+        app:layout_constraintTop_toBottomOf="@+id/txtForgotPassword" />
 
     <TextView
         android:id="@+id/txtSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="5dp"
+        android:padding="5dp"
         android:text="Sign up?"
         android:textColor="@android:color/holo_blue_bright"
-        app:layout_constraintStart_toStartOf="@+id/btSignIn"
-        app:layout_constraintTop_toBottomOf="@+id/btSignIn" />
+        app:layout_constraintBottom_toBottomOf="@+id/textView4"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toTopOf="@+id/textView4" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

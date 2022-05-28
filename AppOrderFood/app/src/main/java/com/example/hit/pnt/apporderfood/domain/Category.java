@@ -1,0 +1,30 @@
+package com.example.hit.pnt.apporderfood.domain;
+
+public class Category {
+    private String title;
+    private String pic;
+
+    public Category(String title, String pic) {
+        this.title = title;
+        this.pic = pic;
+    }
+
+    public Category() {
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getPic() {
+        return pic;
+    }
+
+    public void setPic(String pic) {
+        this.pic = pic;
+    }
+}
