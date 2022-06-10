@@ -39,8 +39,8 @@ public interface ApiServer {
 //    @GET("api/live?access_key=843d4d34ae72b3882e3db642c51e28e6&currencies=VND&source=USD&format=1")
 //    Call<Currency> convertUsdToVnd1();
 //
-//    @GET("api/live")
-//    Call<Currency> convertUsdToVnd2(@QueryMap Map<String, String> options);
+    @GET("api/live")
+    Call<Currency> convertUsdToVnd2(@QueryMap Map<String, String> options);
 //
 //    // https://apilayer.net/api/users/list
 //    @GET("api/users/list")
@@ -68,6 +68,4 @@ public interface ApiServer {
 
     @POST("posts")
     Call<Post> sendPosts(@Body Post post);
-
-
 }

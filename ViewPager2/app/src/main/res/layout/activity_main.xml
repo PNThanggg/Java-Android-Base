@@ -97,6 +97,8 @@
         android:paddingStart="@dimen/_50sdp"
         android:paddingEnd="@dimen/_50sdp"
         app:layout_constraintBottom_toTopOf="@+id/textRecommended"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearSearch" />
 
     <androidx.cardview.widget.CardView

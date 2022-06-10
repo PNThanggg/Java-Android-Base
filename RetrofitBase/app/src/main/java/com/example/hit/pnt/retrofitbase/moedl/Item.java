@@ -1,15 +1,13 @@
 package com.example.hit.pnt.retrofitbase.moedl;
 
-public class User {
-    private int userId;
-    private int id;
-    private String title;
-    private String body;
+public class Item {
+    private int userId, id;
+    private String title, body;
 
-    public User() {
+    public Item() {
     }
 
-    public User(int userId, int id, String title, String body) {
+    public Item(int userId, int id, String title, String body) {
         this.userId = userId;
         this.id = id;
         this.title = title;
@@ -46,15 +44,5 @@ public class User {
 
     public void setBody(String body) {
         this.body = body;
-    }
-
-    @Override
-    public String toString() {
-        return "Post{" +
-                "userId=" + userId +
-                ", id=" + id +
-                ", title='" + title + '\'' +
-                ", body='" + body + '\'' +
-                '}';
     }
 }

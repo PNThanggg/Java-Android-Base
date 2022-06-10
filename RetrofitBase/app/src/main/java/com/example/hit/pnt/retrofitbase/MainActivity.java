@@ -1,16 +1,20 @@
 package com.example.hit.pnt.retrofitbase;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.hit.pnt.retrofitbase.adapter.ItemAdapter;
 import com.example.hit.pnt.retrofitbase.api.ApiServer;
-import com.example.hit.pnt.retrofitbase.moedl.User;
+import com.example.hit.pnt.retrofitbase.moedl.Item;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -18,53 +22,48 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView txtId, txtUserId, txtBody, txtTitle;
     private Button button;
-    private EditText inputID;
+    private RecyclerView recyclerView;
+    private List<Item> items;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
-        txtUserId = findViewById(R.id.txtUserId);
-        txtId = findViewById(R.id.txtId);
-        txtBody = findViewById(R.id.txtBody);
-        txtTitle = findViewById(R.id.txtTitle);
-        inputID = findViewById(R.id.inputId);
 
+        recyclerView = findViewById(R.id.recyclerView);
         button = findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onClickButton();
-            }
-        });
+
+        button.setOnClickListener(v -> onClickButton());
     }
 
     private void onClickButton() {
-        if(inputID.getText().toString().isEmpty()) {
-            Toast.makeText(MainActivity.this, "Input ID", Toast.LENGTH_SHORT).show();
-        } else {
-            ApiServer.apiServer.getId(Integer.parseInt(inputID.getText().toString())).enqueue(new Callback<User>() {
-                @Override
-                public void onResponse(Call<User> call, Response<User> response) {
-                    Toast.makeText(MainActivity.this, "Call Api Success", Toast.LENGTH_SHORT).show();
+        ApiServer.apiServer.get().enqueue(new Callback<List<Item>>() {
+            @Override
+            public void onResponse(Call<List<Item>> call, Response<List<Item>> response) {
+                Toast.makeText(MainActivity.this, "Call Api Success", Toast.LENGTH_SHORT).show();
 
-                    User user = response.body();
-                    if(user != null) {
-                        txtId.setText(String.valueOf(user.getId()));
-                        txtUserId.setText(String.valueOf(user.getUserId()));
-                        txtTitle.setText(user.getTitle());
-                        txtBody.setText(user.getBody());
-                    }
-                }
+                items = response.body();
 
-                @Override
-                public void onFailure(Call<User> call, Throwable t) {
-                    Toast.makeText(MainActivity.this, "Call Api Error", Toast.LENGTH_SHORT).show();
+                if(items != null && response.isSuccessful()) {
+                    ItemAdapter adapter = new ItemAdapter(items);
+                    recyclerView.setHasFixedSize(true);
+
+                    LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
+
+                    recyclerView.setLayoutManager(layoutManager);
+                    recyclerView.addItemDecoration( new DividerItemDecoration(getApplicationContext(), layoutManager.getOrientation()));
+
+                    recyclerView.setItemAnimator(new DefaultItemAnimator());
+
+                    recyclerView.setAdapter(adapter);
                 }
-            });
-        }
+            }
+
+            @Override
+            public void onFailure(Call<List<Item>> call, Throwable t) {
+                Toast.makeText(MainActivity.this, "Call Api Error", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

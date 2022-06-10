@@ -57,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
         btCallAPI.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                onClickButtonCallAPI();
-                sendPost();
+                onClickButtonCallAPI();
+//                sendPost();
             }
         });
 
@@ -104,32 +104,32 @@ public class MainActivity extends AppCompatActivity {
 //                }
 //            }
 
-//        Map<String, String> options = new HashMap<>();
-//        options.put("access_key", "843d4d34ae72b3882e3db642c51e28e6");
-//        options.put("currencies", "VND");
-//        options.put("source", "USD");
-//        options.put("format", "1");
-//
-//        ApiServer.apiServer.convertUsdToVnd2(options).enqueue(new Callback<Currency>() {
-//            @Override
-//            public void onResponse(Call<Currency> call, Response<Currency> response) {
-//                // call thành công
-//                Toast.makeText(MainActivity.this, "Call Api Success", Toast.LENGTH_SHORT).show();
-//
-//                Currency currency = response.body();
-//
-//                if (currency != null && currency.isSuccess()) {
-//                    txtTerms.setText(currency.getTerms());
-//                    txtSource.setText(currency.getSource());
-//                    txtUsdVnd.setText(String.valueOf(currency.getQuotes().getUsdVnd()));
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<Currency> call, Throwable t) {
-//                Toast.makeText(MainActivity.this, "Call Api Error", Toast.LENGTH_SHORT).show();
-//            }
-//        });
+        Map<String, String> options = new HashMap<>();
+        options.put("access_key", "843d4d34ae72b3882e3db642c51e28e6");
+        options.put("currencies", "VND");
+        options.put("source", "USD");
+        options.put("format", "1");
+
+        ApiServer.apiServer.convertUsdToVnd2(options).enqueue(new Callback<Currency>() {
+            @Override
+            public void onResponse(Call<Currency> call, Response<Currency> response) {
+                // call thành công
+                Toast.makeText(MainActivity.this, "Call Api Success", Toast.LENGTH_SHORT).show();
+
+                Currency currency = response.body();
+
+                if (currency != null && currency.isSuccess()) {
+                    txtTerms.setText(currency.getTerms());
+                    txtSource.setText(currency.getSource());
+                    txtUsdVnd.setText(String.valueOf(currency.getQuotes().getUsdVnd()));
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Currency> call, Throwable t) {
+                Toast.makeText(MainActivity.this, "Call Api Error", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void sendPost() {
