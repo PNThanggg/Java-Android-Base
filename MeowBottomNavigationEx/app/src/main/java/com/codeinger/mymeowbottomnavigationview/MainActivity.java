@@ -47,15 +47,11 @@ public class MainActivity extends AppCompatActivity {
                     case 4:
                         replace(new ProfileFragment());
                         break;
-
                 }
+
                 return null;
             }
         });
-
-
-
-
     }
 
     private void replace(Fragment fragment) {

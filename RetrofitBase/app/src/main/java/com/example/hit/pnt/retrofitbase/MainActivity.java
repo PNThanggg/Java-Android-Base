@@ -14,6 +14,7 @@ import com.example.hit.pnt.retrofitbase.adapter.ItemAdapter;
 import com.example.hit.pnt.retrofitbase.api.ApiServer;
 import com.example.hit.pnt.retrofitbase.moedl.Item;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -22,9 +23,8 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button button;
     private RecyclerView recyclerView;
-    private List<Item> items;
+    private List<Item> items = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         recyclerView = findViewById(R.id.recyclerView);
-        button = findViewById(R.id.button);
+        Button button = findViewById(R.id.button);
 
         button.setOnClickListener(v -> onClickButton());
     }

@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void createExampleList() {
         mExampleList = new ArrayList<>();
+
         mExampleList.add(new ExampleItem(R.drawable.ic_android, "One", "Line 1"));
         mExampleList.add(new ExampleItem(R.drawable.ic_audio, "Two", "Line 2"));
         mExampleList.add(new ExampleItem(R.drawable.ic_sun, "Three", "Line ... 3"));

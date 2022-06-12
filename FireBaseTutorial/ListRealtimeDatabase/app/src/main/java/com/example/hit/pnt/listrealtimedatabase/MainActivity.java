@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -71,11 +73,38 @@ public class MainActivity extends AppCompatActivity {
             public void onClickUpdateItem(User user) {
                 openDialogUpdateItem(user);
             }
+
+            @Override
+            public void onClickDeleteItem(User user) {
+                delete(user);
+            }
         });
 
         recyclerView.setAdapter(adapter);
 
         getListUserFromRealtimeDatabase();
+    }
+
+    private void delete(User user) {
+        new AlertDialog.Builder(this)
+                .setTitle(getString(R.string.app_name))
+                .setMessage("Ban co chac la muon xoa ban ghi nay ko?")
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        FirebaseDatabase database = FirebaseDatabase.getInstance();
+                        DatabaseReference reference = database.getReference("list_users");
+
+                        reference.child(String.valueOf(user.getId())).removeValue(new DatabaseReference.CompletionListener() {
+                            @Override
+                            public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {
+                                Toast.makeText(getApplicationContext(), "Delete data success", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+                })
+                .setNegativeButton("Cancle", null)
+                .show();
     }
 
     private void addUser(User user) {
@@ -151,15 +180,30 @@ public class MainActivity extends AppCompatActivity {
                  if(list == null || list.isEmpty() || user == null) return;
 
                  for(int i = 0; i < list.size(); i++) {
-                     if(list.get(i).getId().equals(user.getId())) list.set(i, user);
+                     if(list.get(i).getId().equals(user.getId())) {
+                         list.set(i, user);
+                         break;
+                     }
                  }
 
                  adapter.notifyDataSetChanged();
              }
 
+             @SuppressLint("NotifyDataSetChanged")
              @Override
              public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+                 User user = snapshot.getValue(User.class);
 
+                 if(list == null || list.isEmpty() || user == null) return;
+
+                 for(int i = 0; i < list.size(); i++) {
+                     if(list.get(i).getId().equals(user.getId())) {
+                         list.remove(list.get(i));
+                         break;
+                     }
+                 }
+
+                 adapter.notifyDataSetChanged();
              }
 
              @Override

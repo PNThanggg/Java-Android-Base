@@ -21,11 +21,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         bottomNavigation = findViewById(R.id.bottomNavigation);
-        bottomNavigation.add(new SSCustomBottomNavigation.Model(1,R.drawable.home,"Home"));
-        bottomNavigation.add(new SSCustomBottomNavigation.Model(2,R.drawable.subscriptions,"Subscriptions"));
-        bottomNavigation.add(new SSCustomBottomNavigation.Model(3,R.drawable.search,"Search"));
-        bottomNavigation.add(new SSCustomBottomNavigation.Model(4,R.drawable.library,"Library"));
-        bottomNavigation.add(new SSCustomBottomNavigation.Model(5,R.drawable.person,"Profile"));
+
+        bottomNavigation.add(new SSCustomBottomNavigation.Model(1, R.drawable.home,"Home"));
+        bottomNavigation.add(new SSCustomBottomNavigation.Model(2, R.drawable.subscriptions,"Subscriptions"));
+        bottomNavigation.add(new SSCustomBottomNavigation.Model(3, R.drawable.search,"Search"));
+        bottomNavigation.add(new SSCustomBottomNavigation.Model(4, R.drawable.library,"Library"));
+        bottomNavigation.add(new SSCustomBottomNavigation.Model(5, R.drawable.person,"Profile"));
 
         bottomNavigation.setCount(2,"11");
         bottomNavigation.show(1,true);
