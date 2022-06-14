@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         rcStudent.setLayoutManager(layoutManager);
         rcStudent.setAdapter(adapter);
 
-        adapter.setiOnClickStudent(new IOnClickStudent() {
+        adapter.setOnClick(new IOnClickStudent() {
             @Override
             public void onClickImage(Student student) {
                 Toast.makeText(MainActivity.this, student.getAvatar(), Toast.LENGTH_SHORT).show();

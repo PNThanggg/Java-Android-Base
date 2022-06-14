@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         DatabaseReference myRef = database.getReference("my_map");
 
         Map<String, Boolean> map = new HashMap<>();
+
         map.put("1", true);
         map.put("2", false);
         map.put("3", true);

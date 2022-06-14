@@ -15,8 +15,8 @@ public class StudentAdater extends RecyclerView.Adapter<StudentAdater.ViewHolder
     List<Student> list;
     IOnClickStudent iOnClickStudent;
 
-    public void setiOnClickStudent(IOnClickStudent iOnClickStudent) {
-        this.iOnClickStudent = iOnClickStudent;
+    public void setOnClick(IOnClickStudent onClick) {
+        this.iOnClickStudent = onClick;
     }
 
     public StudentAdater(List<Student> list) {

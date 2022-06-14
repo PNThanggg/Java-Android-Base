@@ -27,6 +27,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -103,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                         });
                     }
                 })
-                .setNegativeButton("Cancle", null)
+                .setNegativeButton("Cancel", null)
                 .show();
     }
 
@@ -125,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
         DatabaseReference myRef = database.getReference("list_users");
 
         List<User> mList = new ArrayList<>();
+
         mList.add(new User(1, "User 1"));
         mList.add(new User(2, "User 2"));
         mList.add(new User(3, "User 3"));
@@ -161,13 +163,71 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        });
 
-         myRef.addChildEventListener(new ChildEventListener() {
+
+//         myRef.addChildEventListener(new ChildEventListener() {
+//             @SuppressLint("NotifyDataSetChanged")
+//             @Override
+//             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+//                 User user = snapshot.getValue(User.class);
+//                 if(user != null) {
+//                     list.add(user);
+//                     adapter.notifyDataSetChanged();
+//                 }
+//             }
+//
+//             @SuppressLint("NotifyDataSetChanged")
+//             @Override
+//             public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+//                 User user = snapshot.getValue(User.class);
+//
+//                 if(list == null || list.isEmpty() || user == null) return;
+//
+//                 for(int i = 0; i < list.size(); i++) {
+//                     if(list.get(i).getId().equals(user.getId())) {
+//                         list.set(i, user);
+//                         break;
+//                     }
+//                 }
+//
+//                 adapter.notifyDataSetChanged();
+//             }
+//
+//             @SuppressLint("NotifyDataSetChanged")
+//             @Override
+//             public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+//                 User user = snapshot.getValue(User.class);
+//
+//                 if(list == null || list.isEmpty() || user == null) return;
+//
+//                 for(int i = 0; i < list.size(); i++) {
+//                     if(list.get(i).getId().equals(user.getId())) {
+//                         list.remove(list.get(i));
+//                         break;
+//                     }
+//                 }
+//
+//                 adapter.notifyDataSetChanged();
+//             }
+//
+//             @Override
+//             public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+//
+//             }
+//
+//             @Override
+//             public void onCancelled(@NonNull DatabaseError error) {
+//
+//             }
+//         });
+
+        Query query = myRef.orderByChild("rate");
+        query.addChildEventListener(new ChildEventListener() {
              @SuppressLint("NotifyDataSetChanged")
              @Override
              public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                  User user = snapshot.getValue(User.class);
                  if(user != null) {
-                     list.add(user);
+                     list.add(0, user);
                      adapter.notifyDataSetChanged();
                  }
              }
