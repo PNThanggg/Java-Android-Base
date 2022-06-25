@@ -224,18 +224,19 @@
         android:layout_height="@dimen/_60sdp"
         android:layout_marginStart="@dimen/_8sdp"
         android:layout_marginEnd="@dimen/_8sdp"
-        android:layout_marginBottom="@dimen/_8sdp"
+        android:layout_marginBottom="4dp"
         android:background="@color/background"
         app:iconSize="@dimen/_18sdp"
         app:iconTint="@color/bottom_bar_icon_tint"
         app:iconTintActive="@color/bottom_bar_icon_tint_active"
         app:indicatorColor="@color/bottom_bar_indicator_color"
         app:indicatorRadius="@dimen/_8sdp"
-        app:menu="@menu/menu_bottom_navigation"
-        app:textColor="@color/bottom_bar_text_color"
-        app:textSize="@dimen/_10ssp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu_bottom_navigation"
+        app:textColor="@color/bottom_bar_text_color"
+        app:textSize="@dimen/_10ssp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

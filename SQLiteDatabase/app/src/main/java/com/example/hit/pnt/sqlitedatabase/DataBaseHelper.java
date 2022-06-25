@@ -70,9 +70,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 CustomerModel customerModel = new CustomerModel(customerID, customerName, customerAge, customerActive);
                 returnList.add(customerModel);
             } while(cursor.moveToNext());
-        } else {
-
         }
+
         cursor.close();
         database.close();
 

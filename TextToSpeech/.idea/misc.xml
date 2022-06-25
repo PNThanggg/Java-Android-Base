@@ -3,10 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Android/SearchFuntionRecycleView/app/src/main/res/layout/activity_main.xml" value="0.2755208333333333" />
-        <entry key="..\:/Android/SearchFuntionRecycleView/app/src/main/res/layout/item.xml" value="0.2755208333333333" />
-        <entry key="..\:/SearchFuntionRecycleView/app/src/main/res/layout/activity_main.xml" value="0.18999073215940684" />
-        <entry key="..\:/SearchFuntionRecycleView/app/src/main/res/layout/item.xml" value="0.22826086956521738" />
+        <entry key="..\:/Android/TextToSpeech/app/src/main/res/drawable-v24/ic_baseline_mic_24.xml" value="0.169" />
+        <entry key="..\:/Android/TextToSpeech/app/src/main/res/drawable/ic_baseline_mic_24.xml" value="0.1" />
+        <entry key="..\:/Android/TextToSpeech/app/src/main/res/layout/activity_main.xml" value="0.26197916666666665" />
       </map>
     </option>
   </component>
