@@ -1,4 +1,4 @@
-package com.example.hit.pnt.room;
+package com.example.hit.pnt.room.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.example.hit.pnt.room.R;
 import com.example.hit.pnt.room.database.AppDatabase;
 import com.example.hit.pnt.room.database.User;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;

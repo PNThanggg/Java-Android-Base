@@ -1,4 +1,7 @@
-package com.example.hit.pnt.room;
+package com.example.hit.pnt.room.activity;
+
+import android.content.Intent;
+import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,10 +9,7 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-
+import com.example.hit.pnt.room.R;
 import com.example.hit.pnt.room.adapter.UserAdapter;
 import com.example.hit.pnt.room.database.AppDatabase;
 import com.example.hit.pnt.room.database.User;
@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 //    implementation 'androidx.room:room-runtime:2.4.2'
 
     private UserAdapter adapter;
+    private List<User> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,14 +33,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         FloatingActionButton addNewUser = findViewById(R.id.addNewUser);
-        addNewUser.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivityIfNeeded(
-                        new Intent(MainActivity.this, AddActivity.class),
-                        100);
-            }
-        });
+        addNewUser.setOnClickListener(v -> startActivityIfNeeded(
+                new Intent(MainActivity.this, AddActivity.class),
+                100)
+        );
 
         initRecyclerView();
 
@@ -56,13 +53,14 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.addItemDecoration(dividerItemDecoration);
 
         adapter = new UserAdapter(MainActivity.this);
+
         recyclerView.setAdapter(adapter);
     }
 
     private void loadAllUser() {
         AppDatabase database = AppDatabase.getDatabaseInstance(this.getApplicationContext());
 
-        List<User> list = database.userDao().getAllUsers();
+        list = database.userDao().getAllUsers();
 
         adapter.setUserList(list);
     }
@@ -72,8 +70,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode == 100) {
-            loadAllUser();
-        }
+        if (requestCode == 100) loadAllUser();
     }
 }

@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddActivity">
-
+    tools:context=".activity.AddActivity">
 
     <EditText
         android:id="@+id/enterFirstName"
@@ -47,11 +46,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:backgroundTint="@color/white"
+        android:contentDescription="TODO"
         android:src="@drawable/ic_add_task"
-        app:maxImageSize="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/enterLastName"
-        android:contentDescription="TODO"
+        app:maxImageSize="40dp"
         tools:ignore="ContentDescription,HardcodedText" />
 </androidx.constraintlayout.widget.ConstraintLayout>

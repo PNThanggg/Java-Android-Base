@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -24,10 +24,10 @@
         android:layout_marginStart="325dp"
         android:layout_marginBottom="15dp"
         android:backgroundTint="@color/white"
+        android:contentDescription="TODO"
         android:src="@drawable/ic_add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:maxImageSize="40dp"
-        tools:ignore="ContentDescription,HardcodedText,SpeakableTextPresentCheck"
-        android:contentDescription="TODO" />
+        tools:ignore="ContentDescription,HardcodedText,SpeakableTextPresentCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -85,7 +85,8 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="ContentDescription" />
 
                     <TextView
                         android:id="@+id/textView8"
@@ -137,8 +138,6 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <EditText
@@ -160,7 +159,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/constraintLayout"
                     app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-                    tools:ignore="TouchTargetSizeCheck" />
+                    tools:ignore="RtlSymmetry,TouchTargetSizeCheck" />
 
                 <TextView
                     android:id="@+id/textView11"
@@ -190,7 +189,6 @@
                     android:text="Popular"
                     android:textColor="#000000"
                     android:textSize="16sp"
-
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="@+id/textView11"
                     app:layout_constraintTop_toBottomOf="@+id/recycleView1" />
@@ -209,38 +207,36 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
+        android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
         app:layout_constraintBottom_toBottomOf="@+id/scrollView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
-        >
+        app:layout_constraintStart_toStartOf="parent">
+
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bottom_app_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:backgroundTint="#f6f6f6"
-            app:fabCradleRoundedCornerRadius="50dp"
-            app:fabCradleMargin="8dp"
-            app:fabCradleVerticalOffset="6dp"
             android:background="@android:color/transparent"
-            >
+            android:backgroundTint="#f6f6f6"
+            app:fabCradleMargin="8dp"
+            app:fabCradleRoundedCornerRadius="50dp"
+            app:fabCradleVerticalOffset="6dp">
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:id="@+id/navigation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:menu="@menu/menu"
                 android:layout_marginEnd="20dp"
-                >
-            </com.google.android.material.bottomnavigation.BottomNavigationView>
+                app:menu="@menu/menu" />
         </com.google.android.material.bottomappbar.BottomAppBar>
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_anchor="@id/bottom_app_bar"
-            android:src="@drawable/cart_white"
             android:backgroundTint="@color/white"
-            />
+            android:src="@drawable/cart_white"
+            app:layout_anchor="@id/bottom_app_bar"
+            tools:ignore="ContentDescription" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
