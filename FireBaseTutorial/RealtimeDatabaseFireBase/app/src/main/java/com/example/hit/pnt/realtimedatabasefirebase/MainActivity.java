@@ -1,9 +1,5 @@
 package com.example.hit.pnt.realtimedatabasefirebase;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -12,6 +8,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -19,7 +18,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
@@ -70,12 +68,8 @@ public class MainActivity extends AppCompatActivity {
         map.put("3", true);
         map.put("4", false);
 
-        myRef.setValue(map, new DatabaseReference.CompletionListener() {
-            @Override
-            public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {
-                Toast.makeText(MainActivity.this, "Push data success", Toast.LENGTH_SHORT).show();
-            }
-        });
+        myRef.setValue(map, (error, ref) ->
+                Toast.makeText(MainActivity.this, "Push data success", Toast.LENGTH_SHORT).show());
     }
 
     private void deleteDatabase() {
@@ -88,12 +82,8 @@ public class MainActivity extends AppCompatActivity {
                         FirebaseDatabase database = FirebaseDatabase.getInstance();
                         DatabaseReference myRef = database.getReference("user_info/address");
 
-                        myRef.removeValue(new DatabaseReference.CompletionListener() {
-                            @Override
-                            public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {
-                                Toast.makeText(getApplicationContext(), "Delete data success", Toast.LENGTH_SHORT).show();
-                            }
-                        });
+                        myRef.removeValue((error, ref)
+                                -> Toast.makeText(getApplicationContext(), "Delete data success", Toast.LENGTH_SHORT).show());
                     }
                 })
                 .setNegativeButton("Cancle", null)
@@ -131,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Map<String, Boolean> mapResult = new HashMap<>();
 
-                for(DataSnapshot i : snapshot.getChildren()) {
+                for (DataSnapshot i : snapshot.getChildren()) {
                     mapResult.put(i.getKey(), i.getValue(Boolean.class));
                 }
 
@@ -197,11 +187,7 @@ public class MainActivity extends AppCompatActivity {
         mapUpdate.put("3", false);
         mapUpdate.put("4", false);
 
-        myRef.setValue(mapUpdate, new DatabaseReference.CompletionListener() {
-            @Override
-            public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {
-                Toast.makeText(MainActivity.this, "Push data success", Toast.LENGTH_SHORT).show();
-            }
-        });
+        myRef.setValue(mapUpdate,
+                (error, ref) -> Toast.makeText(MainActivity.this, "Push data success", Toast.LENGTH_SHORT).show());
     }
 }
