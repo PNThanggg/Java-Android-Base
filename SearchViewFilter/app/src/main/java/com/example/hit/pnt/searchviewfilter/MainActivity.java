@@ -1,16 +1,15 @@
 package com.example.hit.pnt.searchviewfilter;
 
+import android.app.SearchManager;
+import android.content.Context;
+import android.os.Bundle;
+import android.view.Menu;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.app.SearchManager;
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.Menu;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -84,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if(!searchView.isIconified()) {
+        if (!searchView.isIconified()) {
             searchView.setIconified(true);
             return;
         }

@@ -16,10 +16,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
     TabLayout tabLayout;
     ViewPager viewPager;
     MainAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,8 +37,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
     }
 
-    public class MainAdapter extends FragmentStatePagerAdapter {
-
+    public static class MainAdapter extends FragmentStatePagerAdapter {
         List<Fragment> fragmentList = new ArrayList<>();
         List<String> stringList = new ArrayList<>();
 
